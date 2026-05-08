@@ -1,4 +1,4 @@
-import {Search, Calendar1, Bell} from 'lucide-react'
+import {Search, Bell} from 'lucide-react'
 
 export default function Header(){
     return(
@@ -8,7 +8,6 @@ export default function Header(){
                 <input className="w-100 pl-9 py-2 rounded-full bg-white" placeholder="Pesquisar pacientes" />
             </div>
             <div className='flex flex-row gap-4'>
-                <Calendar1/>
                 <Bell/>
                 <div className="w-px h-8 bg-gray-300"></div> 
                 <span className="text-black">Dra. Maya Yamamoto</span>
