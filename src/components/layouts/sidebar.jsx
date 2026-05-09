@@ -1,11 +1,11 @@
 import { UserRoundSearch, ChartNoAxesCombined, Settings, ShieldQuestionMark, LogOut, Calendar, LayoutDashboard, IdCard } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
     const menu = [
-        { label: 'Dashboard' , icon: LayoutDashboard},
-        { label: 'Minha Agenda' , icon: Calendar},
-        { label: 'Pacientes' , icon: UserRoundSearch},
-        { label: 'Equipe', icon: IdCard},
-        { label: 'Configurações', icon: Settings},
+        { label: 'Dashboard' , icon: LayoutDashboard, path:"/"},
+        { label: 'Minha Agenda' , icon: Calendar, path:"/agenda"},
+        { label: 'Pacientes' , icon: UserRoundSearch, path:"/pacientes"},
+        { label: 'Equipe', icon: IdCard, path:"/equipe"},
     ]
     const buttonside = [
         { label: 'Suporte', icon: ShieldQuestionMark },
@@ -14,6 +14,7 @@ import { UserRoundSearch, ChartNoAxesCombined, Settings, ShieldQuestionMark, Log
 
 
 export default function Sidebar(){
+    const location = useLocation()
     return(
         <div className='h-screen flex flex-col w-64 bg-[#005073] sticky top-0'>
             {/* Topo da Side*/}
@@ -24,10 +25,10 @@ export default function Sidebar(){
             
             {/* Meio da Side*/}
             {menu.map((item)=>(
-            <div className={`flex items-center gap-3 px-6 py-3 text-white ${item.label === 'Dashboard' ? 'bg-white/10 border-l-4 border-white' : ''}`} >
+            <Link to={item.path} className={`flex items-center gap-3 px-6 py-3 text-white ${location.pathname === item.path ? 'bg-white/10 border-l-4 border-white' : ''}`} >
                 <item.icon/>
                 <span>{item.label}</span>
-            </div>
+            </Link>
         ))}
         {/* Rodapé da Side*/}
         <div className='mt-auto mb-4'>
