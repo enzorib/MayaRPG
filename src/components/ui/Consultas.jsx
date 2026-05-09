@@ -10,7 +10,7 @@ const consultas = [
 
 export default function Consultas(){
     return(
-        <div className="bg-[#000000] p-4 mx-2 rounded-3xl flex flex-col gap-3">
+        <div className="bg-green-200 p-4 mx-2 rounded-3xl flex flex-col gap-3">
             <div className=" flex flex-row justify-between m-5">
                <h1 className="text-3xl">Próximas consultas</h1>
                <button className='flex flex-row items-center'>Ver Agenda <MoveRight/> </button>
@@ -27,7 +27,7 @@ export default function Consultas(){
                     <span className={`px-3 py-1 rounded-full w-28 text-center ${
                         consulta.status == "Confirmado" ? "bg-green-200 text-green-800" : 
                         consulta.status == "Cancelado" ? "bg-red-200 text-red-800" :
-                        consulta.status == "Aguardando" ? "bg-yellow-200 text-yellow-800" : ""
+                        consulta.status == "Aguardando" ? "bg-yellow-200 text-yellow-800" : "bg-gray-200 text-gray-800"
                     }`}>{consulta.status}</span>    
                     <button className='w-32'>Ver Relatório</button>
                 </div>
